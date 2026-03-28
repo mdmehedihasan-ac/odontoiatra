@@ -1,0 +1,11 @@
+{
+  "name": "odontoiatria-gentili",
+  "private": true,
+  "workspaces": ["backend", "frontend"],
+  "scripts": {
+    "dev:backend": "cd backend && node server.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "scrape": "cd scraper && python scrape.py",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  }
+}
