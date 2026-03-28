@@ -6,6 +6,7 @@ export default function CustomCursor() {
   const [visible, setVisible] = useState(false);
   const posRef = useRef({ x: 0, y: 0 });
   const auraPos = useRef({ x: 0, y: 0 });
+  const isHoveredRef = useRef(false);
   const rafRef = useRef(null);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ export default function CustomCursor() {
     document.addEventListener("mouseleave", onLeave);
     document.addEventListener("mouseenter", onEnter);
 
-    // Smooth aura follow via RAF
+    // Smooth aura follow via RAF — scale is applied here to avoid transform race
     function animate() {
       const { x, y } = posRef.current;
       const ax = auraPos.current.x + (x - auraPos.current.x) * 0.12;
@@ -28,7 +29,8 @@ export default function CustomCursor() {
       auraPos.current = { x: ax, y: ay };
 
       if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate(${x - 6}px, ${y - 6}px)`;
+        const scale = isHoveredRef.current ? " scale(2)" : "";
+        cursorRef.current.style.transform = `translate(${x - 6}px, ${y - 6}px)${scale}`;
       }
       if (auraRef.current) {
         auraRef.current.style.transform = `translate(${ax - 20}px, ${ay - 20}px)`;
@@ -40,7 +42,7 @@ export default function CustomCursor() {
     // Hover state on interactive elements
     const interactables = document.querySelectorAll("a, button, [data-cursor]");
     const onHoverIn = () => {
-      if (cursorRef.current) cursorRef.current.style.transform += " scale(2)";
+      isHoveredRef.current = true;
       if (auraRef.current) {
         auraRef.current.style.width = "70px";
         auraRef.current.style.height = "70px";
@@ -48,6 +50,7 @@ export default function CustomCursor() {
       }
     };
     const onHoverOut = () => {
+      isHoveredRef.current = false;
       if (auraRef.current) {
         auraRef.current.style.width = "40px";
         auraRef.current.style.height = "40px";

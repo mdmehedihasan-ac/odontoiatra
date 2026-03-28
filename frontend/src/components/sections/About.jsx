@@ -55,7 +55,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="absolute -bottom-6 -right-4 md:right-8 glass-dark rounded-2xl p-5 max-w-xs shadow-card"
+            className="absolute -bottom-6 right-0 sm:-right-4 md:right-8 glass-dark rounded-2xl p-4 sm:p-5 max-w-[260px] sm:max-w-xs shadow-card"
           >
             <p className="text-pearl/70 text-sm italic leading-relaxed mb-3">
               "Mi ha insegnato a vedere ogni paziente come unico e speciale."

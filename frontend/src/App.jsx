@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Lenis from "lenis";
@@ -31,16 +31,11 @@ function AppRoutes() {
 }
 
 export default function App() {
-  const lenisRef = useRef(null);
-
   useEffect(() => {
-    // Init Lenis smooth scroll
     const lenis = new Lenis({
       duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
     });
-    lenisRef.current = lenis;
 
     function raf(time) {
       lenis.raf(time);

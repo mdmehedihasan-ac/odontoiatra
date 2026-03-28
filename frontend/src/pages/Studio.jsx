@@ -50,7 +50,7 @@ export default function Studio() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-deep/60" />
         <div className="relative max-w-7xl mx-auto px-6">
           <span className="section-label mb-5 block">Lo Studio</span>
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-pearl leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-pearl leading-tight">
             La nostra <br /><span className="text-gradient">filosofia</span>
           </h1>
         </div>

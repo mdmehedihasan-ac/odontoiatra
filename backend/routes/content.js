@@ -1,13 +1,13 @@
 import { Router } from "express";
 import { readFileSync, existsSync } from "fs";
 import { fileURLToPath } from "url";
-import { dirname, join, resolve } from "path";
+import { dirname, resolve } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Path to site_data.json produced by the Python scraper
-// Resolve from backend/data/site_data.json
-const DATA_PATH = resolve(__dirname, "..", "data", "site_data.json");
+// Resolve from scraper/scraped_assets/site_data.json
+const DATA_PATH = resolve(__dirname, "..", "..", "scraper", "scraped_assets", "site_data.json");
 
 const router = Router();
 

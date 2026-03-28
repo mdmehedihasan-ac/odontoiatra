@@ -18,8 +18,8 @@ export default function Footer() {
       <div className="absolute -top-32 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-20 right-1/4 w-64 h-64 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-20 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="relative max-w-7xl mx-auto px-6 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12 lg:mb-16">
 
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -107,7 +107,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-pearl/30">
+        <div className="pt-8 border-t border-white/5 flex flex-col items-center text-center md:flex-row md:items-center md:justify-between md:text-left gap-4 text-xs text-pearl/30">
           <p>
             © {new Date().getFullYear()} Odontoiatria Maria Gentili S.r.l. — P.I. 01810560506 / 02331710505
           </p>

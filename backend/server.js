@@ -1,12 +1,8 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { readFileSync, existsSync } from "fs";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
 import contentRouter from "./routes/content.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3001;
 
 const app = express();
@@ -19,17 +15,6 @@ app.use(
 );
 
 // ─── CORS ─────────────────────────────────────────────────────────────────────
-const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:5174",
-  "http://localhost:5175",
-  "http://localhost:5176",
-  "http://localhost:5177",
-  "http://localhost:4173",
-  "http://127.0.0.1:5173",
-  "http://127.0.0.1:5176",
-];
-
 app.use(
   cors({
     origin: (origin, callback) => {

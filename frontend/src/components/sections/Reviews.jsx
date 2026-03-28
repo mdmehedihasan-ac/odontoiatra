@@ -10,8 +10,9 @@ const REVIEWS = [
   { author: "Giovanni Neri",     text: "Ottimo servizio, personale disponibile e competente.", rating: 5 },
 ];
 
-// Double the array for infinite loop
+// Double the arrays for infinite loop — computed once at module level
 const ALL_REVIEWS = [...REVIEWS, ...REVIEWS];
+const ALL_REVIEWS_REV = [...ALL_REVIEWS].reverse();
 
 function ReviewCard({ review }) {
   return (
@@ -76,7 +77,7 @@ export default function Reviews() {
         </div>
         {/* Track 2 — reversed */}
         <div className="flex animate-marquee-rev w-max">
-          {[...ALL_REVIEWS].reverse().map((r, i) => (
+          {ALL_REVIEWS_REV.map((r, i) => (
             <ReviewCard key={`b-${i}`} review={r} />
           ))}
         </div>

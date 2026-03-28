@@ -1,23 +1,11 @@
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import {
-  ShieldCheck, Activity, Zap, Cpu, Smile, Star, Feather, Heart, ArrowRight, CheckCircle2,
-} from "lucide-react";
+import { ShieldCheck, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ICON_MAP } from "../constants/iconMap.js";
 import PageTransition from "../components/ui/PageTransition.jsx";
 import ContactCTA from "../components/sections/ContactCTA.jsx";
 import { useSiteData } from "../hooks/useSiteData.jsx";
-
-const ICON_MAP = {
-  "shield-check": ShieldCheck,
-  activity: Activity,
-  zap: Zap,
-  cpu: Cpu,
-  smile: Smile,
-  star: Star,
-  feather: Feather,
-  heart: Heart,
-};
 
 const SERVICE_CONTENT = {
   prevenzione: {
@@ -150,6 +138,13 @@ const SERVICE_CONTENT = {
   },
 };
 
+const EXCLUDED_H2S = new Set([
+  "Fissa il tuo appuntamento",
+  "Giorni e orari di apertura",
+  "Additional Links",
+  "This website uses cookies",
+]);
+
 const SERVICE_IMAGES = {
   prevenzione:              "/assets/images/prevenzione_WhatsApp+Image+2026-03-02+at+11.39.26-1920w.jpeg",
   parodontologia:           "/assets/images/parodontologia_tudio-dentistico-gentili-castelfranco-di-sotto-051-1920w.jpg",
@@ -176,6 +171,7 @@ export default function ServiceDetail() {
   const body = staticContent?.body || pageData?.paragraphs?.slice(0, 2) || [];
   const points = staticContent?.points || pageData?.services || [];
   const h2s = pageData?.h2?.slice(0, 4) || [];
+  const filteredH2s = h2s.filter((h) => h.length > 6 && !EXCLUDED_H2S.has(h));
   const heroImg = SERVICE_IMAGES[slug];
 
   return (
@@ -186,7 +182,7 @@ export default function ServiceDetail() {
       </Helmet>
 
       {/* Hero banner */}
-      <section className="relative min-h-[55vh] flex items-end pb-20 pt-36 overflow-hidden bg-deep noise">
+      <section className="relative min-h-[55vh] flex items-end pb-16 sm:pb-20 pt-28 sm:pt-36 overflow-hidden bg-deep noise">
         {heroImg && (
           <img
             src={heroImg}
@@ -207,7 +203,7 @@ export default function ServiceDetail() {
             </div>
             <span className="section-label">Prestazione</span>
           </div>
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-pearl leading-tight mb-4">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-pearl leading-tight mb-4">
             {title}
           </h1>
           <p className="text-pearl/50 text-lg max-w-xl">{subtitle}</p>
@@ -237,7 +233,7 @@ export default function ServiceDetail() {
             )}
 
             {/* Sub-sections from scraped H2 */}
-            {h2s.filter(h => h.length > 6 && !["Fissa il tuo appuntamento", "Giorni e orari di apertura", "Additional Links", "This website uses cookies"].includes(h)).map((h, i) => (
+            {filteredH2s.map((h, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -258,7 +254,7 @@ export default function ServiceDetail() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.19, 1, 0.22, 1] }}
-              className="glass rounded-2xl p-6 sticky top-28"
+              className="glass rounded-2xl p-6 lg:sticky top-28"
             >
               <h3 className="font-serif text-lg font-semibold text-pearl mb-5">
                 Cosa includiamo

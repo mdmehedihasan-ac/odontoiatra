@@ -24,11 +24,11 @@ function StatItem({ label, value, suffix, index }) {
       <div className="relative inline-block">
         <span
           ref={numRef}
-          className="font-serif text-5xl md:text-6xl font-bold text-gradient"
+          className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-gradient"
         >
           0
         </span>
-        <span className="font-serif text-4xl md:text-5xl font-bold text-accent ml-1">{suffix}</span>
+        <span className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-accent ml-1">{suffix}</span>
       </div>
       <p className="text-pearl/50 text-sm mt-2 tracking-wide">{label}</p>
     </motion.div>
@@ -46,7 +46,7 @@ export default function Stats() {
       </div>
 
       <div className="relative max-w-5xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 sm:gap-y-12 gap-x-3 sm:gap-x-8">
           {STATS.map((stat, i) => (
             <StatItem key={stat.label} {...stat} index={i} />
           ))}

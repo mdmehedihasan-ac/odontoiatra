@@ -87,7 +87,7 @@ export default function Hero() {
       {/* ── Main content ── */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20 grid lg:grid-cols-2 gap-16 items-center"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-28 pb-14 sm:pb-20 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
       >
         {/* Left — Text */}
         <div>
@@ -144,7 +144,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4, duration: 0.6 }}
-            className="flex items-center gap-6 flex-wrap"
+            className="flex items-center gap-3 sm:gap-6 flex-wrap"
           >
             <div className="flex items-center gap-1.5">
               {[...Array(5)].map((_, i) => (
@@ -168,7 +168,7 @@ export default function Hero() {
             {/* Main card — real studio photo */}
             <div className="glass rounded-3xl overflow-hidden aspect-[4/5] relative">
               <img
-                src="/assets/images/studio_image00006-1920w.jpeg"
+                src="/assets/images/studio_image00010-1920w.jpeg"
                 alt="Studio dentistico Gentili — sala trattamenti"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="eager"

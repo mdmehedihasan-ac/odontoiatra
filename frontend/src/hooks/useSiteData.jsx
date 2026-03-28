@@ -20,7 +20,7 @@ export function SiteDataProvider({ children }) {
         // Apply scraped palette as CSS custom properties
         if (json.palette) {
           const root = document.documentElement;
-          const { primary, secondary, accent, background, text } = json.palette;
+          const { primary, secondary, accent } = json.palette;
           if (primary) root.style.setProperty("--scraped-primary", primary);
           if (secondary) root.style.setProperty("--scraped-secondary", secondary);
           if (accent) root.style.setProperty("--scraped-accent", accent);

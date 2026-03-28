@@ -119,7 +119,7 @@ export default function Staff() {
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-deep/60" />
         <div className="relative max-w-7xl mx-auto px-6">
           <span className="section-label mb-5 block">Il team</span>
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-pearl leading-tight">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-pearl leading-tight">
             Le persone<br />
             <span className="text-gradient">dietro il tuo sorriso</span>
           </h1>
@@ -129,7 +129,7 @@ export default function Staff() {
       {/* Staff cards */}
       <section className="section bg-[#0c1220]">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
             {STAFF.map((member, i) => (
               <motion.div
                 key={member.name}

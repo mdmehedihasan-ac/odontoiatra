@@ -2,21 +2,9 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import VanillaTilt from "vanilla-tilt";
-import {
-  ShieldCheck, Activity, Zap, Cpu, Smile, Star, Feather, Heart, ArrowRight,
-} from "lucide-react";
+import { ShieldCheck, ArrowRight } from "lucide-react";
+import { ICON_MAP } from "../../constants/iconMap.js";
 import { useSiteData } from "../../hooks/useSiteData.jsx";
-
-const ICON_MAP = {
-  "shield-check": ShieldCheck,
-  activity: Activity,
-  zap: Zap,
-  cpu: Cpu,
-  smile: Smile,
-  star: Star,
-  feather: Feather,
-  heart: Heart,
-};
 
 const FALLBACK_SERVICES = [
   { slug: "prevenzione",            label: "Prevenzione",              icon: "shield-check", summary: "La base per un sorriso sano e duraturo." },
@@ -34,7 +22,7 @@ function ServiceCard({ service, index }) {
   const Icon = ICON_MAP[service.icon] || ShieldCheck;
 
   useEffect(() => {
-    if (!tiltRef.current) return;
+    if (!tiltRef.current || window.matchMedia("(pointer: coarse)").matches) return;
     VanillaTilt.init(tiltRef.current, {
       max: 12,
       speed: 600,
