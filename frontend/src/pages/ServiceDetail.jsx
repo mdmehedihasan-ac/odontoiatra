@@ -150,6 +150,17 @@ const SERVICE_CONTENT = {
   },
 };
 
+const SERVICE_IMAGES = {
+  prevenzione:              "/assets/images/prevenzione_WhatsApp+Image+2026-03-02+at+11.39.26-1920w.jpeg",
+  parodontologia:           "/assets/images/parodontologia_tudio-dentistico-gentili-castelfranco-di-sotto-051-1920w.jpg",
+  "conservativa-endodonzia":"/assets/images/conservativa-endodonzia_WhatsApp+Image+2026-03-02+at+11.39.24-1920w.jpeg",
+  implantologia:            "/assets/images/studio_image00010-1920w.jpeg",
+  ortodonzia:               "/assets/images/ortodonzia_WhatsApp+Image+2026-03-02+at+11.39.37-1920w.jpeg",
+  "estetica-sorriso":       "/assets/images/parodontologia_macro-photography-beautiful-female-smile-with-white-healthy-teeth.jpg",
+  "estetica-volto":         "/assets/images/estetica-volto_WhatsApp+Image+2026-03-02+at+11.39.25+(1)-ba4273e3-1920w.jpeg",
+  pedodonzia:               "/assets/images/pedodonzia_WhatsApp+Image+2026-03-02+at+11.41.14-1920w.jpeg",
+};
+
 export default function ServiceDetail() {
   const { slug } = useParams();
   const { data } = useSiteData();
@@ -165,6 +176,7 @@ export default function ServiceDetail() {
   const body = staticContent?.body || pageData?.paragraphs?.slice(0, 2) || [];
   const points = staticContent?.points || pageData?.services || [];
   const h2s = pageData?.h2?.slice(0, 4) || [];
+  const heroImg = SERVICE_IMAGES[slug];
 
   return (
     <PageTransition>
@@ -175,8 +187,16 @@ export default function ServiceDetail() {
 
       {/* Hero banner */}
       <section className="relative min-h-[55vh] flex items-end pb-20 pt-36 overflow-hidden bg-deep noise">
-        <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-deep/70" />
+        {heroImg && (
+          <img
+            src={heroImg}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover opacity-25"
+            loading="eager"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-deep/60 to-deep/90" />
         {/* Glow per icon */}
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-primary/8 rounded-full blur-3xl pointer-events-none" />
 

@@ -165,27 +165,18 @@ export default function Hero() {
           className="hidden lg:block"
         >
           <div className="relative">
-            {/* Main card */}
+            {/* Main card — real studio photo */}
             <div className="glass rounded-3xl overflow-hidden aspect-[4/5] relative">
-              {/* Placeholder gradient until real image loads */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-surface to-accent/10" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 p-10">
-                {/* Decorative dental icon */}
-                <motion.div
-                  animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-24 h-24 rounded-2xl bg-gradient-to-br from-primary to-primary/50 flex items-center justify-center shadow-glow"
-                >
-                  <svg viewBox="0 0 64 64" fill="none" className="w-12 h-12 opacity-90">
-                    <path d="M32 8C22 8 14 14 14 26c0 6 2 12 5 18l4 10c1 2 3 2 4 0l2-5 2 5c1 2 3 2 4 0l2-5 2 5c1 2 3 2 4 0l4-10c3-6 5-12 5-18C50 14 42 8 32 8z" fill="rgba(61,90,241,0.7)" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5"/>
-                    <path d="M24 20c2-3 5-4 8-4s6 1 8 4" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </motion.div>
-                <div className="text-center">
-                  <p className="font-serif text-2xl font-bold text-pearl mb-1">Dott.ssa</p>
-                  <p className="font-serif text-3xl font-bold text-gradient-gold">Maria Gentili</p>
-                  <p className="text-pearl/40 text-sm mt-3">Odontoiatra — Specialista Parodontologia</p>
-                </div>
+              <img
+                src="/assets/images/studio_image00006-1920w.jpeg"
+                alt="Studio dentistico Gentili — sala trattamenti"
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-deep/80 via-deep/20 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <p className="font-serif text-xl font-bold text-pearl mb-0.5">Dott.ssa Maria Gentili</p>
+                <p className="text-accent text-xs tracking-widest uppercase">Odontoiatra — Specialista Parodontologia</p>
               </div>
             </div>
 
