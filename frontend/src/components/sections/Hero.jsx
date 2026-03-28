@@ -102,7 +102,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Heading split-char reveal */}
-          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-6 overflow-hidden">
+            <h1 className="font-serif text-5xl sm:text-6xl md:text-6xl lg:text-6xl font-bold leading-[1.05] mb-6 overflow-hidden">
             <div className="overflow-hidden">
               <SplitText chars={CHARS_LINE1} delay={0.35} />
             </div>
