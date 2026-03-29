@@ -6,6 +6,9 @@
     "dev:backend": "cd backend && node server.js",
     "dev:frontend": "cd frontend && npm run dev",
     "scrape": "cd scraper && python scrape.py",
-    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "copy:data": "cp scraper/scraped_assets/site_data.json frontend/public/site_data.json",
+    "scrape:build": "npm run scrape && npm run copy:data",
+    "build": "cd frontend && npm install && npm run build"
   }
 }

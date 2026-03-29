@@ -1,0 +1,12 @@
+[build]
+  # Copia site_data.json (se esiste) nella cartella public del frontend,
+  # poi avvia la build Vite. Il "|| true" evita errori se il file non c'è ancora.
+  command = "cp -f scraper/scraped_assets/site_data.json frontend/public/site_data.json 2>/dev/null || true; cd frontend && npm install && npm run build"
+  publish = "frontend/dist"
+
+# ─── SPA redirect ─────────────────────────────────────────────────────────────
+# Tutti i percorsi vengono serviti dall'app React (react-router-dom)
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

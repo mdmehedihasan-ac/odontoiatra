@@ -10,7 +10,7 @@ export function SiteDataProvider({ children }) {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch("/api/content", { signal: controller.signal })
+    fetch("/site_data.json", { signal: controller.signal })
       .then((res) => {
         if (!res.ok) throw new Error(`API error: ${res.status}`);
         return res.json();

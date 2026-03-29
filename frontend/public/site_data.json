@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "site_name": "Odontoiatria Maria Gentili",
+    "doctor": "Dott.ssa Maria Gentili",
+    "tagline": "Previeni, cura, mantieni.",
+    "subtitle": "Studio dentistico a Castelfranco di Sotto e Peccioli, specializzato nella prevenzione.",
+    "base_url": "https://www.odontoiatriamariagentili.it"
+  },
+  "palette": {
+    "primary": "#0a2342",
+    "secondary": "#4a9ebe",
+    "accent": "#c8a96e",
+    "background": "#ffffff",
+    "text": "#1a1d2e"
+  },
+  "navigation": [],
+  "contact": {
+    "sedi": [],
+    "whatsapp": "+39 327 3938147",
+    "email": "info@odontoiatriamariagentili.it",
+    "social": {}
+  },
+  "services_meta": [],
+  "pages": {},
+  "stats": [],
+  "reviews": [],
+  "_stub": true
+}
